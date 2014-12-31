@@ -1,17 +1,20 @@
-TrelloClone.Views.BoardNew = Backbone.View.extend ({
+TrelloClone.Views.BoardNew = Backbone.CompositeView.extend ({
   template: JST['boards/new'],
 
   events: {
     'click button.add-board': 'saveBoard'
   },
 
-  render: function () {
+  render: function (error) {
     this.$el.html(this.template());
+    if (error) {
+      this.$el.find('section.error').html(error);
+    }
     return this;
   },
 
   saveBoard: function (event) {
-    event.preventDefault;
+    event.preventDefault();
     var title = $('input.title').val();
 
     var newBoard = new TrelloClone.Models.Board();
@@ -20,9 +23,9 @@ TrelloClone.Views.BoardNew = Backbone.View.extend ({
         this.collection.add(newBoard);
         Backbone.history.navigate('#/api/boards/' + newBoard.id, {trigger: true});
       }.bind(this),
-      error: function () {
-        $('section.error').html(response.responseJSON);
-      }
+      error: function (model, resp) {
+        this.render(resp.responseJSON);
+      }.bind(this)
     });
   }
 })

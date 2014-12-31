@@ -10,17 +10,16 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend ({
       maybeBoard.fetch();
       return maybeBoard;
     } else {
-      var board = new TrelloClone.Models.Board({id: id})
-      board.fetch({
+      var maybeBoard = new TrelloClone.Models.Board({id: id})
+      maybeBoard.fetch({
         success: function () {
-          this.add(board);
+          this.add(maybeBoard);
         }.bind(this),
         error: function () {
           console.log('no such board id')
         }
       })
     }
-
     return maybeBoard;
   }
 

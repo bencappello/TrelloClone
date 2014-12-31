@@ -1,8 +1,17 @@
 <h2><%= board.escape('title') %></h2>
 <ul>
   <% board.lists().forEach( function (list) { %>
-    <li><%= list.get('title') %></li>
+    <li>
+      <%= list.get('title') %>
+      <%= list.get('ord') %>
+    </li>
   <% }) %>
 </ul>
+<br>
+<section class='add-list'>
+  <button class='add-list'>New List</button>
+</section>
+
+<br><br>
 
 <a href="#/api/boards">All Boards</a>

@@ -4,6 +4,7 @@ module Api
 
     def create
       @list = current_board.lists.new(list_params)
+      @list.ord = current_board.lists.count
 
       if @list.save
         render json: @list

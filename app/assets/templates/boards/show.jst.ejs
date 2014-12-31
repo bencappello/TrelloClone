@@ -1,0 +1,8 @@
+<h2><%= board.escape('title') %></h2>
+<ul>
+  <% board.lists().forEach( function (list) { %>
+    <li><%= list.get('title') %></li>
+  <% }) %>
+</ul>
+
+<a href="#/api/boards">All Boards</a>

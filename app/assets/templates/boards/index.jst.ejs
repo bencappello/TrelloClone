@@ -1,8 +1,7 @@
 <h2>Boards</h2>
 <ul class='boards'>
-  <li>
-    <% boards.forEach(function (board) { %>
-      <%= board.get('title') %>
+    <% boards.each(function (board) { %>
+      <li><a href="#/api/boards/<%= board.id %>"><%= board.get('title') %></a></li>
     <% }) %>
-  </li>
 </ul>
+<a href="#/api/boards/new">Add A Board</a>

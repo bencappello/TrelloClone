@@ -2,19 +2,30 @@ TrelloClone.Views.ListNew = Backbone.CompositeView.extend ({
   template: JST['lists/new'],
 
   events: {
-    'click button.save-list': 'saveList'
+    'click button#add-list': 'addList',
+    'click button#save-list': 'saveList'
   },
 
   initialize: function (options) {
     this.board = options.board;
   },
 
-  render: function (error) {
-    this.$el.html(this.template());
+  render: function (form, error) {
+    if (form) {
+      this.$el.html(this.template({form: true}));
+    } else {
+      this.$el.html(this.template({form: false}));
+    }
+
     if (error) {
       this.$el.find('section.error').html(error);
     }
+
     return this;
+  },
+
+  addList: function () {
+    this.render(true);
   },
 
   saveList: function (event) {
@@ -31,7 +42,7 @@ TrelloClone.Views.ListNew = Backbone.CompositeView.extend ({
         this.board.lists().add(newList)
       }.bind(this),
       error: function () {
-        this.render(resp.responseJSON);
+        this.render(form, resp.responseJSON);
       }.bind(this)
     })
   }

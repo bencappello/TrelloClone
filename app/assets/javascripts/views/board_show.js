@@ -7,20 +7,30 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend ({
   template: JST['boards/show'],
 
   events: {
-    'click button.add-list': 'addList'
+
   },
 
   render: function () {
-    this.$el.html(this.template({board: this.model}))
-    // this.attachSubviews();
+    this.$el.html(this.template({board: this.model}));
+    this.showLists();
+    this.newListFormOrButton();
     return this;
   },
 
-  addList: function () {
-    var newListView = new TrelloClone.Views.ListNew({board: this.model});
-    // this.addSubview('section.add-list', newListView)
-    this.$el.find('section.add-list').html(newListView.render().$el);
+  addList: function (list) {
+    var showListView = new TrelloClone.Views.ListShow({model: list});
+    this.addSubview('ul#lists', showListView)
   },
+
+  showLists: function () {
+    var view = this;
+    this.model.lists().each(this.addList.bind(this));
+  },
+
+  newListFormOrButton: function () {
+    var newListView = new TrelloClone.Views.ListNew({board: this.model});
+    this.addSubview('section#add-list', newListView)
+  }
 
 
 })

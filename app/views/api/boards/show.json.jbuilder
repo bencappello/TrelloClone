@@ -4,4 +4,4 @@
 #    - the cards for each list
 json.(@board, :id, :title)
 
-json.lists @board.lists, :title, :ord
+json.lists @board.lists, :id, :title, :ord

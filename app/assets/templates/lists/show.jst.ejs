@@ -1,3 +1,7 @@
-<%= list.get('title') %>
+<%= list.escape('title') %>
 <%= list.get('ord') %>
 <button id="delete-list" data-id='<%= list.id %>'>Remove List</button>
+<br>
+<ul id='cards'></ul>
+<br>
+<section id='add-card'></section>

@@ -4,6 +4,7 @@ module Api
 
     def create
       @card = current_list.cards.new(card_params)
+      @card.ord = current_list.cards.count
 
       if @card.save
         render json: @card
@@ -20,6 +21,12 @@ module Api
         render json: @card.errors.full_messages,
                status: :unprocessable_entity
       end
+    end
+
+    def destroy
+      @card = Card.find(params[:id])
+      @card.destroy
+      render json: {}
     end
 
     private

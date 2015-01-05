@@ -96,3 +96,11 @@ section#list-space::after {
   display: block;
   content: '';
 }
+
+.place-holder {
+  height: 40px;
+  border-radius: 4px;
+  margin-top: 5px;
+  background: black;
+  opacity: 0.5;
+}

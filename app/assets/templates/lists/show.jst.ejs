@@ -1,7 +1,12 @@
-<%= list.escape('title') %>
-<%= list.get('ord') %>
-<button id="delete-list" data-id='<%= list.id %>'>Remove List</button>
+<div id="list-header">
+  <h4 id='list-title'>
+    <%= list.escape('title') %>
+    <!-- <%= list.get('ord') %> -->
+  </h4>
+  <button id="delete-list" data-id='<%= list.id %>'>Remove List</button>
+</div>
+
 <br>
-<ul id='cards'></ul>
+<ul class="sort-cards connectable" id='cards'></ul>
 <br>
 <section id='add-card'></section>

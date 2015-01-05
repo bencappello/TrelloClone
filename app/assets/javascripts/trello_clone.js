@@ -10,6 +10,7 @@ window.TrelloClone = {
 
     new TrelloClone.Routers.Router(boards, $rootEl);
     Backbone.history.start();
+
   }
 };
 

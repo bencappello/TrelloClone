@@ -15,3 +15,84 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+* {
+  list-style: none;
+  background: transparent;
+  font: inherit;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+body {
+  background-color: rgb(14, 116, 175);
+}
+
+.navbar {
+  background-color: rgba(0,0,0,.15);
+}
+
+#board-title {
+  margin-left : 20px;
+  color: #f6f6f6;
+}
+
+button {
+  padding: 2px;
+  margin: 5px
+}
+
+ul {
+  display: block;
+}
+
+.navbar-default {
+  color: #f6f6f6;
+}
+
+.navbar-brand {
+  color: #f6f6f6;
+}
+
+li.list-show {
+  float: left;
+  margin-left : 20px;
+  background: #E3E3E3;
+  border-radius: 4px;
+}
+
+li.card-show {
+  background: #f6f6f6;
+  color: black;
+  border-radius: 4px;
+  margin-top: 5px;
+  box-shadow: 1px;
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(92,90,92,1);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(92,90,92,1);
+  box-shadow: 0px 1px 0px 0px rgba(92,90,92,1);
+}
+
+ul#lists {
+  float: left;
+}
+
+#list-header {
+  padding: 3px;
+  color: #4d4d4d;
+}
+
+#list-title {
+  float: left;
+  padding: 5px
+}
+
+ul#cards {
+  padding: 5px;
+}
+
+section#list-space::after {
+  clear: both;
+  display: block;
+  content: '';
+}

@@ -18,6 +18,10 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
     this.$el.html(this.template({list: this.model}))
     this.showCards();
     this.newCardFormOrButton();
+    this.$el.find(".sort-cards" ).sortable({
+      connectWith: ".connectable",
+      placeholder: "card-place-holder"
+    }).disableSelection();
     return this;
   },
 

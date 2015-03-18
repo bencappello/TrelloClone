@@ -47,17 +47,18 @@ ul {
   display: block;
 }
 
-.navbar-default {
+.navbar-default .navbar-brand {
   color: #f6f6f6;
 }
 
-.navbar-brand {
-  color: #f6f6f6;
+.navbar-default .navbar-brand:hover {
+  color: #CFCFCF;
 }
 
 li.list-show {
   float: left;
   margin-left : 20px;
+  width: 240px;
   background: #E3E3E3;
   border-radius: 4px;
 }
@@ -73,6 +74,11 @@ li.card-show {
   box-shadow: 0px 1px 0px 0px rgba(92,90,92,1);
 }
 
+li.card-show:hover {
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
 ul#lists {
   float: left;
 }
@@ -80,6 +86,12 @@ ul#lists {
 #list-header {
   padding: 3px;
   color: #4d4d4d;
+  border-bottom: 1px solid black;
+}
+
+#list-header:hover {
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
 }
 
 #list-title {
@@ -97,8 +109,17 @@ section#list-space::after {
   content: '';
 }
 
-.place-holder {
+.card-place-holder {
   height: 40px;
+  border-radius: 4px;
+  margin-top: 5px;
+  background: black;
+  opacity: 0.5;
+}
+
+.list-place-holder {
+  height: 40px;
+  width: 240px;
   border-radius: 4px;
   margin-top: 5px;
   background: black;

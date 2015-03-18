@@ -38,7 +38,6 @@ TrelloClone.Views.CardNew = Backbone.CompositeView.extend ({
     newCard.save(data, {
       success: function () {
         this.list.cards().add(newCard)
-        debugger
       }.bind(this),
       error: function () {
         this.render(form, resp.responseJSON);

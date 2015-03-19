@@ -13,10 +13,13 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend ({
     'click button#delete-card': 'removeCard'
   },
 
+  attributes: function() {
+  return {
+    'data-card-id': this.model.id
+  };
+},
+
   render: function () {
-    // $( ".sort-cards" ).sortable({
-    //   connectWith: ".connectable"
-    // }).disableSelection();
     this.$el.html(this.template({card: this.model}))
     return this;
   },

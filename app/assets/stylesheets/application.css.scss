@@ -13,6 +13,11 @@
  *= require_tree .
  */
 
+$bgDefault      : #B8A009;
+$bgHighlight    : #D6BA00;
+$colDefault     : #ecf0f1;
+$colHighlight   : #ecdbff;
+
 @import "bootstrap";
 @import "font-awesome";
 
@@ -26,11 +31,11 @@
 }
 
 body {
-  background-color: rgb(14, 116, 175);
+  background-color: $bgHighlight;
 }
 
 .navbar {
-  background-color: rgba(0,0,0,.15);
+  background-color: $bgDefault;
 }
 
 #board-title {
@@ -107,7 +112,7 @@ section#list-space::after {
 }
 
 .card-place-holder {
-  height: 40px;
+  // height: 40px;
   border-radius: 4px;
   margin-top: 5px;
   background: black;

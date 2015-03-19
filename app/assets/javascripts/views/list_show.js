@@ -11,7 +11,10 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
   template: JST['lists/show'],
 
   events: {
-    'click button#delete-list': 'removeList'
+    'click button#delete-list': 'removeList',
+    'sortreceive': 'receiveCard',
+    'sortremove': 'removeCard',
+    'sortstop': 'saveCards'
   },
 
   render: function () {
@@ -20,7 +23,11 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
     this.newCardFormOrButton();
     this.$el.find(".sort-cards" ).sortable({
       connectWith: ".connectable",
-      placeholder: "card-place-holder"
+      placeholder: "card-place-holder",
+      start: function(e, ui ){
+        ui.placeholder.height(ui.helper.outerHeight());
+        ui.placeholder.width(ui.helper.outerWidth());
+      }
     }).disableSelection();
     return this;
   },
@@ -35,6 +42,33 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
     var view = this;
     this.model.cards().each(this.addCard.bind(this));
   },
+
+  receiveCard: function(event, ui) {
+    var $cardDisplay = ui.item,
+        cardId = $cardDisplay.data('card-id'),
+        newOrd = $cardDisplay.index();
+    var cardClone = new TrelloClone.Models.Card({
+      id: cardId,
+      list_id: this.model.id,
+      ord: newOrd
+    });
+    cardClone.save();
+    this.collection.add(cardClone, {silent: true});
+    this.saveCards(event);
+  },
+
+  removeCard: function(event, ui) {
+    var $cardDisplay = ui.item,
+        cardId = $cardDisplay.data('card-id'),
+        cards = this.model.cards(),
+        cardToRemove = cards.get(cardId),
+        cardSubviews = this.subviews('.list-cards');
+    cards.remove(cardToRemove);
+
+    var subviewToRemove = _.findWhere(cardSubviews, {model: cardToRemove});
+    cardSubviews.splice(cardSubviews.indexOf(subviewToRemove), 1);
+  },
+
 
   newCardFormOrButton: function () {
     var newCardView = new TrelloClone.Views.CardNew({list: this.model});

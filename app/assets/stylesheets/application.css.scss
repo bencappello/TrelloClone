@@ -133,4 +133,13 @@ section#list-space::after {
 }
 
 .btn-success {
+  color: white;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
+  color: white;
+  background-color: #3071a9;
+  border-color: #285e8e;
 }

@@ -1,6 +1,7 @@
 TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
   initialize: function (options) {
     this.parent = options.parent;
+    this.collection = this.model.cards();
     this.listenTo(this.model.cards(), 'add remove', this.render);
   },
 
@@ -10,18 +11,24 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
 
   template: JST['lists/show'],
 
+  orderOptions: {
+    modelElement: '.card-show',
+    modelName: 'card',
+    subviewContainer: 'ul#cards'
+  },
+
   events: {
     'click button#delete-list': 'removeList',
     'sortreceive': 'receiveCard',
     'sortremove': 'removeCard',
-    'sortstop': 'saveCards'
+    'sortstop': 'saveCards',
   },
 
   render: function () {
     this.$el.html(this.template({list: this.model}))
     this.showCards();
     this.newCardFormOrButton();
-    this.$el.find(".sort-cards" ).sortable({
+    this.$(".sort-cards" ).sortable({
       connectWith: ".connectable",
       placeholder: "card-place-holder",
       start: function(e, ui ){
@@ -53,7 +60,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
       ord: newOrd
     });
     cardClone.save();
-    this.collection.add(cardClone, {silent: true});
+    this.model.cards().add(cardClone, {silent: true});
     this.saveCards(event);
   },
 
@@ -62,11 +69,16 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
         cardId = $cardDisplay.data('card-id'),
         cards = this.model.cards(),
         cardToRemove = cards.get(cardId),
-        cardSubviews = this.subviews('.list-cards');
+        cardSubviews = this.subviews('ul#cards');
     cards.remove(cardToRemove);
 
     var subviewToRemove = _.findWhere(cardSubviews, {model: cardToRemove});
     cardSubviews.splice(cardSubviews.indexOf(subviewToRemove), 1);
+  },
+
+  saveCards: function(event) {
+    event.stopPropagation(); // Prevent list sorting listener from firing.
+    this.saveOrds();
   },
 
 
@@ -81,4 +93,6 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
     this.parent.removeSubview('ul#lists', this)
   },
 
-})
+});
+
+_.extend(TrelloClone.Views.ListShow.prototype, TrelloClone.Utils.OrdView);

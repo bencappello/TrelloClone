@@ -8,7 +8,13 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend ({
   template: JST['boards/show'],
 
   events: {
+    'sortstop': 'saveOrds',
+  },
 
+  orderOptions: {
+    modelElement: '.list-show',
+    modelName: 'list',
+    subviewContainer: 'ul#lists'
   },
 
   render: function () {

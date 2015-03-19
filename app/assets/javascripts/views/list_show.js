@@ -24,6 +24,12 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
     'sortstop': 'saveCards',
   },
 
+  attributes: function() {
+    return {
+      'data-list-id': this.model.id
+    };
+  },
+
   render: function () {
     this.$el.html(this.template({list: this.model}))
     this.showCards();

@@ -1,0 +1,68 @@
+
+.navbar {
+  background-color: black;
+}
+
+.navbar-default .navbar-brand {
+  color: #f6f6f6;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #CFCFCF;
+}
+
+.dropdown-menu {
+  background: rgba(0, 0, 0, 0.12);
+  border: none;
+  padding: 0;
+  width: 250px;
+}
+
+.dropdown-menu .top-section{
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid white;
+}
+
+.dropdown-menu .main-section a {
+  border-radius: 3px;
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 18px;
+  color: #428bca;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.30);
+    color: #0956AD;
+    text-decoration: none;
+  }
+}
+
+.new-board {
+}
+
+.dropdown-menu form input{
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu form input::-webkit-input-placeholder {
+  color: #428bca;
+}
+
+.dropdown-menu form button{
+  width: 200px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}

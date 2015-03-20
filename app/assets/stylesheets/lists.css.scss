@@ -1,3 +1,28 @@
 .list-show {
   padding: 5px;
 }
+
+#list-form {
+  float: left;
+  margin-left: 10px;
+  width: 250px;
+}
+
+#list-form .list-form-container > a {
+  display: block;
+  padding: 10px;
+  background: rgba(0,0,0,.12);
+  border-radius: 3px;
+  &:hover {
+    background-color: rgba(0,0,0,.30);
+    color: #0956AD;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+#list-form .list-form-container form {
+  padding: 10px;
+  background: rgba(0,0,0,.12);
+  border-radius: 3px;
+}

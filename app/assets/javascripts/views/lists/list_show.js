@@ -87,6 +87,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
 
     var subviewToRemove = _.findWhere(cardSubviews, {model: cardToRemove});
     cardSubviews.splice(cardSubviews.indexOf(subviewToRemove), 1);
+    this.saveCards(event);
   },
 
   saveCards: function(event) {

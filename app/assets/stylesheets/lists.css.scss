@@ -112,3 +112,20 @@ li.list-show {
 ul#cards {
   padding: 5px;
 }
+
+.list-modal textarea {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.list-modal button.update {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.list-modal button.delete {
+  float: right;
+  width: auto;
+  font-size: 12px
+}

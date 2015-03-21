@@ -49,10 +49,35 @@ ul {
   border-color: #357ebd;
 }
 
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
+.btn-success:hover, .btn-success:focus, .btn-success:active,
+  .open > .btn-success.dropdown-toggle {
   color: white;
   background-color: #3071a9;
   border-color: #285e8e;
+}
+
+.btn-update {
+  color: white;
+  background-color: rgba(0,0,0,0.3);
+  border-color: rgba(0,0,0,0.1);
+}
+
+.btn-update:hover, .btn-update:focus, .btn-update:active {
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  border-color: rgba(0,0,0,0.1);
+}
+
+.btn-delete {
+  color: white;
+  background-color: #BA3C3C;
+  border-color: #9C2D2D;
+}
+
+.btn-delete:hover, .btn-delete:focus, .btn-delete:active {
+  color: white;
+  background-color: #9C2D2D;
+  border-color: #801919;
 }
 
 .modal-backdrop {
@@ -67,10 +92,11 @@ ul {
 }
 
 .list-modal {
-  width: 50%;
+  width: 25%;
   position: absolute;
   top: 25%;
-  left: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1032;
   background-color: rgb(240, 240, 240);
   border-radius: 3px;
@@ -80,7 +106,10 @@ ul {
 .modal-dismiss {
   float: right;
   font-size: 130%;
+  margin-bottom: 20px;
+  color: rgba(0,0,0,0.2);
   &:hover {
     text-decoration: none;
+    color: rgba(0,0,0,0.5);
   }
 }

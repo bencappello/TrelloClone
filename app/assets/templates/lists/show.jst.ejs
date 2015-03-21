@@ -3,7 +3,7 @@
     <%= list.escape('title') %>
     <!-- <%= list.get('ord') %> -->
   </span>
-  <button id="delete-list" data-id='<%= list.id %>'>Remove List</button>
+  <a href="#" class="close close-lg" id="delete-list" data-id='<%= list.id %>'>&times;</a>
 </div>
 
 <ul class="sort-cards connectable" id='cards'></ul>

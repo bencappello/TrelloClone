@@ -11,24 +11,25 @@ TrelloClone.Routers.Router = Backbone.Router.extend ({
 
   routes: {
     '': 'boardIndex',
-    'api/boards': 'boardIndex',
-    'api/boards/new': 'boardNew',
-    'api/boards/:id': 'boardShow'
+    'boards': 'boardIndex',
+    'boards/:id': 'boardShow'
   },
 
   boardIndex: function () {
     var view = new TrelloClone.Views.BoardsIndex({ collection: this.boards });
-    this.$rootEl.html(view.render().$el);
-  },
-
-  boardNew: function () {
-    var view = new TrelloClone.Views.BoardNew({collection: this.boards});
-    this.$rootEl.html(view.render().$el);
+    this._swapView(view);
   },
 
   boardShow: function (id) {
     var board = this.boards.getOrFetch(id);
     var view = new TrelloClone.Views.BoardShow({model: board});
+    this._swapView(view);
+  },
+
+  _swapView: function (view) {
+    this.currentView && this.currentView.remove();
+    this.currentView = view;
+    // TODO: Save jQuery object for #main to instance variable in initialize.
     this.$rootEl.html(view.render().$el);
   }
 })

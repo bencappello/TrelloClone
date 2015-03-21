@@ -1,12 +1,18 @@
-TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend ({
+TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   template: JST['boards/index'],
 
+  className: 'boards-index',
+
   initialize: function () {
-    this.listenTo(this.collection, 'sync add delete', this.render)
+    this.listenTo(this.collection, 'sync', this.render);
   },
 
   render: function () {
-    this.$el.html(this.template({boards: this.collection}));
+    var content = this.template({
+      boards: this.collection
+    });
+
+    this.$el.html(content);
     return this;
   }
-})
+});

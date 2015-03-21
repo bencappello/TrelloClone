@@ -1,7 +1,17 @@
-<h2>Boards</h2>
+
+<div class='boards-index-title'>
+  <h3>My Boards</h3>
+</div>
+
 <ul class='boards'>
-    <% boards.each(function (board) { %>
-      <li><a href="#/api/boards/<%= board.id %>"><%= board.get('title') %></a></li>
-    <% }) %>
+  <% boards.each(function (board) { %>
+    <li>
+      <a href="#/boards/<%= board.id %>">
+        <span class='shadow'></span>
+        <span class='details'>        
+          <%= board.escape("title") %>
+        </span>
+      </a>
+    </li>
+  <% }); %>
 </ul>
-<a href="#/api/boards/new">Add A Board</a>

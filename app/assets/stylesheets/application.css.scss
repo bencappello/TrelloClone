@@ -54,3 +54,33 @@ ul {
   background-color: #3071a9;
   border-color: #285e8e;
 }
+
+.modal-backdrop {
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1031;
+}
+
+.list-modal {
+  width: 50%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 1032;
+  background-color: rgb(240, 240, 240);
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.modal-dismiss {
+  float: right;
+  font-size: 130%;
+  &:hover {
+    text-decoration: none;
+  }
+}

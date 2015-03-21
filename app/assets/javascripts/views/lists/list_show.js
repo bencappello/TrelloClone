@@ -3,6 +3,7 @@ BulletinStack.Views.ListShow = Backbone.CompositeView.extend ({
     this.parent = options.parent;
     this.collection = this.model.cards();
     this.listenTo(this.model.cards(), 'add remove', this.render);
+    this.listenTo(this.model, 'change', this.render);
   },
 
   tagName: 'li',
@@ -18,10 +19,10 @@ BulletinStack.Views.ListShow = Backbone.CompositeView.extend ({
   },
 
   events: {
-    'click #delete-list': 'removeList',
     'sortreceive': 'receiveCard',
     'sortremove': 'removeCard',
     'sortstop': 'saveCards',
+    'click .edit-list': 'showModal',
   },
 
   attributes: function() {
@@ -95,17 +96,12 @@ BulletinStack.Views.ListShow = Backbone.CompositeView.extend ({
     this.saveOrds();
   },
 
-
-  // newCardFormOrButton: function () {
-  //   var newCardView = new BulletinStack.Views.CardNew({list: this.model});
-  //   this.addSubview('section#add-card', newCardView)
-  // },
-
-  removeList: function (event) {
-    event.preventDefault();
-    this.model.destroy();
-    this.parent.removeSubview('ul#lists', this)
-  },
+  showModal: function () {
+  this.modalView = this.modalView ||
+    new BulletinStack.Views.ListModal({ model: this.model, parent: this.parent });
+  $('body').prepend(this.modalView.render().$el);
+  this.modalView.delegateEvents();
+},
 
 });
 

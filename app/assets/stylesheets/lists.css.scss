@@ -70,21 +70,6 @@ li.list-show {
   border-radius: 3px;
 }
 
-#list-title {
-  width: 90%;
-  float: left;
-  padding: 0 5px 5px 5px;
-}
-
-.list-place-holder {
-  height: 40px;
-  width: 240px;
-  border-radius: 4px;
-  margin-top: 5px;
-  background: black;
-  opacity: 0.5;
-}
-
 #list-header {
   padding: 3px;
   color: #4d4d4d;
@@ -97,9 +82,31 @@ li.list-show {
 }
 
 #list-title {
-  padding: 5px;
+  width: 90%;
+  float: left;
   font-size: 20px;
   font-weight: 700;
+  padding: 0 5px 5px 5px;
+}
+
+.edit-list {
+  float: right;
+  color: rgba(0,0,0,0.4);
+  font-size: 16px;
+}
+
+.edit-list:hover {
+  color: rgba(0,0,0,0.7);
+  cursor: pointer;
+}
+
+.list-place-holder {
+  height: 40px;
+  width: 240px;
+  border-radius: 4px;
+  margin-top: 5px;
+  background: black;
+  opacity: 0.5;
 }
 
 ul#cards {

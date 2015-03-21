@@ -1,7 +1,7 @@
 li.list-show {
   margin-left : 20px;
   width: 260px;
-  background: rgba(255, 255, 255, .6);;
+  background: rgba(255, 255, 255, .6);
   border-radius: 4px;
   white-space: normal;
 }
@@ -15,9 +15,26 @@ li.list-show {
   height: 100%;
 }
 
-li.list-show {
+.list-show {
   padding: 5px;
-  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #4d4d4d;
+    border-radius: 10px;
+  }
 }
 
 #list-form {

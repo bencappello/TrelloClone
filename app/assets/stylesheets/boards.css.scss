@@ -2,8 +2,9 @@
   margin: 20px;
 }
 
-.boards {
-  // height: 300px;
+#board-title {
+  margin-left : 20px;
+  color: #f6f6f6;
 }
 
 .boards > li {
@@ -55,4 +56,11 @@
       line-height: normal;
     }
   }
+}
+
+#list-space {
+  white-space: nowrap;
+  height: 100%;
+  overflow-x: auto;
+  margin-right: 20px;
 }

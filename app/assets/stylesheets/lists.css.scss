@@ -1,9 +1,26 @@
 li.list-show {
+  margin-left : 20px;
+  width: 260px;
+  background: #E3E3E3;
+  border-radius: 4px;
+  white-space: normal;
+}
+
+#lists, #list-form, .list-show {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#lists {
+  height: 100%;
+}
+
+li.list-show {
   padding: 5px;
+  height: 100%;
 }
 
 #list-form {
-  float: left;
   margin-left: 20px;
   width: 240px;
 }
@@ -31,4 +48,34 @@ li.list-show {
   padding: 10px;
   background: rgba(0,0,0,.12);
   border-radius: 3px;
+}
+
+.list-place-holder {
+  height: 40px;
+  width: 240px;
+  border-radius: 4px;
+  margin-top: 5px;
+  background: black;
+  opacity: 0.5;
+}
+
+#list-header {
+  padding: 3px;
+  color: #4d4d4d;
+  border-bottom: 1px solid black;
+}
+
+#list-header:hover {
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+#list-title {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+ul#cards {
+  padding: 5px;
 }

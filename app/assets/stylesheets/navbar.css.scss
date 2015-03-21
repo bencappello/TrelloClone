@@ -1,6 +1,11 @@
 
 .navbar {
   background-color: black;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: 2px solid white;
+  border-radius: 0;
 }
 
 .navbar-default .navbar-brand {

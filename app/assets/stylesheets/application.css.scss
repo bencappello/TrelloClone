@@ -13,10 +13,6 @@
  *= require_tree .
  */
 
-$bgHighlight    : #969696;
-$colDefault     : #ecf0f1;
-$colHighlight   : #ecdbff;
-
 @import "bootstrap";
 @import "font-awesome";
 
@@ -30,7 +26,7 @@ $colHighlight   : #ecdbff;
 }
 
 body {
-  background-color: $bgHighlight;
+  background-color: #dfc12a;
 }
 
 .group::after {
@@ -39,86 +35,8 @@ body {
   content: '';
 }
 
-#board-title {
-  margin-left : 20px;
-  color: #f6f6f6;
-}
-
 ul {
   display: block;
-}
-
-li.list-show {
-  float: left;
-  margin-left : 20px;
-  width: 240px;
-  background: #E3E3E3;
-  border-radius: 4px;
-}
-
-li.card-show {
-  background: #f6f6f6;
-  color: black;
-  padding: 7px 10px;
-  border-radius: 4px;
-  margin-top: 5px;
-  box-shadow: 1px;
-  -webkit-box-shadow: 0px 1px 0px 0px rgba(92,90,92,1);
-  -moz-box-shadow: 0px 1px 0px 0px rgba(92,90,92,1);
-  box-shadow: 0px 1px 0px 0px rgba(92,90,92,1);
-}
-
-li.card-show:hover {
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-}
-
-ul#lists {
-  float: left;
-}
-
-#list-header {
-  padding: 3px;
-  color: #4d4d4d;
-  border-bottom: 1px solid black;
-}
-
-#list-header:hover {
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-}
-
-#list-title {
-  padding: 5px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-ul#cards {
-  padding: 5px;
-}
-
-section#list-space::after {
-  clear: both;
-  display: block;
-  content: '';
-}
-
-.card-place-holder {
-  // height: 40px;
-  border-radius: 4px;
-  margin-top: 5px;
-  background: black;
-  opacity: 0.5;
-}
-
-.list-place-holder {
-  height: 40px;
-  width: 240px;
-  border-radius: 4px;
-  margin-top: 5px;
-  background: black;
-  opacity: 0.5;
 }
 
 .close-lg {

@@ -55,11 +55,12 @@ li.list-show {
   padding: 10px;
   background: rgba(0,0,0,.12);
   border-radius: 3px;
+  transition: background-color 0.3s, color 0.3s;
   &:hover {
     background-color: rgba(0,0,0,.30);
     color: #0956AD;
-    text-decoration: underline;
     cursor: pointer;
+    text-decoration: none;
   }
 }
 

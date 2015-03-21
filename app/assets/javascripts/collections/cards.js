@@ -1,6 +1,6 @@
-TrelloClone.Collections.Cards = Backbone.Collection.extend ({
+BulletinStack.Collections.Cards = Backbone.Collection.extend ({
   url: 'api/cards',
-  model: TrelloClone.Models.Card,
+  model: BulletinStack.Models.Card,
   comparator: 'ord',
 
   initialize: function (model, options) {

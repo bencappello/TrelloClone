@@ -1,4 +1,4 @@
-TrelloClone.Views.DropDownView = Backbone.View.extend({
+BulletinStack.Views.DropDownView = Backbone.View.extend({
   attributes: {
     role: 'menu',
     class: 'dropdown-menu add-menu'

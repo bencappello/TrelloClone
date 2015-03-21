@@ -7,7 +7,7 @@
  *   subviewContainer: 'selector'
  * }
  */
-TrelloClone.Utils.OrdView = {
+BulletinStack.Utils.OrdView = {
   resortSubviews: function() {
     var subviews = this.subviews(this.orderOptions.subviewContainer);
     subviews.sort(function(subview1, subview2) {

@@ -1,4 +1,4 @@
-TrelloClone.Views.CardShow = Backbone.CompositeView.extend ({
+BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
   initialize: function (options) {
     this.parent = options.parent;
   },

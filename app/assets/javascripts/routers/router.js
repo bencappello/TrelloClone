@@ -1,9 +1,9 @@
-TrelloClone.Routers.Router = Backbone.Router.extend ({
+BulletinStack.Routers.Router = Backbone.Router.extend ({
   initialize: function (boards, $rootEl) {
     this.boards = boards;
     this.$rootEl = $rootEl;
 
-    var dropDownView = new TrelloClone.Views.DropDownView({
+    var dropDownView = new BulletinStack.Views.DropDownView({
       collection: this.boards
     })
     $('#add-dropdown').append(dropDownView.render().$el);
@@ -16,13 +16,13 @@ TrelloClone.Routers.Router = Backbone.Router.extend ({
   },
 
   boardIndex: function () {
-    var view = new TrelloClone.Views.BoardsIndex({ collection: this.boards });
+    var view = new BulletinStack.Views.BoardsIndex({ collection: this.boards });
     this._swapView(view);
   },
 
   boardShow: function (id) {
     var board = this.boards.getOrFetch(id);
-    var view = new TrelloClone.Views.BoardShow({model: board});
+    var view = new BulletinStack.Views.BoardShow({model: board});
     this._swapView(view);
   },
 

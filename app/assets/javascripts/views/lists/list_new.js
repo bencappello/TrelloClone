@@ -1,4 +1,4 @@
-TrelloClone.Views.ListNew = Backbone.CompositeView.extend ({
+BulletinStack.Views.ListNew = Backbone.CompositeView.extend ({
   template: JST['lists/new'],
 
   events: {
@@ -35,7 +35,7 @@ TrelloClone.Views.ListNew = Backbone.CompositeView.extend ({
       title: title,
       board_id: this.board.id
     };
-    var newList = new TrelloClone.Models.List();
+    var newList = new BulletinStack.Models.List();
 
     newList.save(data, {
       success: function () {

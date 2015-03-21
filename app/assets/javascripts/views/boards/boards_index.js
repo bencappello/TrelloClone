@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardsIndex = Backbone.View.extend({
+BulletinStack.Views.BoardsIndex = Backbone.View.extend({
   template: JST['boards/index'],
 
   className: 'boards-index',

@@ -1,4 +1,4 @@
-TrelloClone.Views.ListForm = Backbone.LinkFormView.extend({
+BulletinStack.Views.ListForm = Backbone.LinkFormView.extend({
   formTemplate: JST['lists/form'],
   linkTemplate: JST['lists/form_link'],
   className: 'list-form-container',

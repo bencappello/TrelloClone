@@ -1,4 +1,4 @@
-window.TrelloClone = {
+window.BulletinStack = {
   Models: {},
   Collections: {},
   Views: {},
@@ -6,15 +6,15 @@ window.TrelloClone = {
   Utils: {},
   initialize: function() {
     var $rootEl = $('#main');
-    var boards = new TrelloClone.Collections.Boards();
+    var boards = new BulletinStack.Collections.Boards();
     boards.fetch();
 
-    new TrelloClone.Routers.Router(boards, $rootEl);
+    new BulletinStack.Routers.Router(boards, $rootEl);
     Backbone.history.start();
 
   }
 };
 
 $(document).ready(function(){
-  TrelloClone.initialize();
+  BulletinStack.initialize();
 });

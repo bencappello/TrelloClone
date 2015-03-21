@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardNew = Backbone.CompositeView.extend ({
+BulletinStack.Views.BoardNew = Backbone.CompositeView.extend ({
   template: JST['boards/new'],
 
   events: {
@@ -17,7 +17,7 @@ TrelloClone.Views.BoardNew = Backbone.CompositeView.extend ({
     event.preventDefault();
     var title = $('input.title').val();
 
-    var newBoard = new TrelloClone.Models.Board();
+    var newBoard = new BulletinStack.Models.Board();
     newBoard.save({title: title}, {
       success: function () {
         this.collection.add(newBoard);

@@ -1,4 +1,4 @@
-TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
+BulletinStack.Views.ListShow = Backbone.CompositeView.extend ({
   initialize: function (options) {
     this.parent = options.parent;
     this.collection = this.model.cards();
@@ -46,7 +46,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
   },
 
   addCard: function (card) {
-    var showCardView = new TrelloClone.Views.CardShow({model: card, parent: this});
+    var showCardView = new BulletinStack.Views.CardShow({model: card, parent: this});
     this.addSubview('ul#cards', showCardView);
   },
 
@@ -57,7 +57,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
   },
 
   renderFooter: function () {
-    var formView = new TrelloClone.Views.CardForm({
+    var formView = new BulletinStack.Views.CardForm({
       collection: this.model.cards()
     });
     this.addSubview('.list-footer', formView);
@@ -67,7 +67,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
     var $cardDisplay = ui.item,
         cardId = $cardDisplay.data('card-id'),
         newOrd = $cardDisplay.index();
-    var cardClone = new TrelloClone.Models.Card({
+    var cardClone = new BulletinStack.Models.Card({
       id: cardId,
       list_id: this.model.id,
       ord: newOrd
@@ -97,7 +97,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
 
 
   // newCardFormOrButton: function () {
-  //   var newCardView = new TrelloClone.Views.CardNew({list: this.model});
+  //   var newCardView = new BulletinStack.Views.CardNew({list: this.model});
   //   this.addSubview('section#add-card', newCardView)
   // },
 
@@ -109,4 +109,4 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend ({
 
 });
 
-_.extend(TrelloClone.Views.ListShow.prototype, TrelloClone.Utils.OrdView);
+_.extend(BulletinStack.Views.ListShow.prototype, BulletinStack.Utils.OrdView);

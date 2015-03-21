@@ -1,5 +1,5 @@
-TrelloClone.Collections.Boards = Backbone.Collection.extend ({
-  model: TrelloClone.Models.Board,
+BulletinStack.Collections.Boards = Backbone.Collection.extend ({
+  model: BulletinStack.Models.Board,
 
   url: 'api/boards',
 
@@ -10,7 +10,7 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend ({
       maybeBoard.fetch();
       return maybeBoard;
     } else {
-      var maybeBoard = new TrelloClone.Models.Board({id: id})
+      var maybeBoard = new BulletinStack.Models.Board({id: id})
       maybeBoard.fetch({
         success: function () {
           this.add(maybeBoard);

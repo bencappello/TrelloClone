@@ -2,17 +2,20 @@
   margin: 20px;
 }
 
+.boards {
+  // height: 300px;
+}
+
 .boards > li {
   width: 33%;
   float: left;
   position: relative;
   a {
-    height: 160px;
     margin: 0 16px 16px 0;
     color: #f6f6f6;
     background-color: rgba(0, 0, 0, 0.12);
     font-size: 16px;
-    padding: 8px 12px;
+    padding: 10px 10px;
     display: block;
     text-decoration: none;
     border-radius: 3px;
@@ -31,6 +34,7 @@
     height: 100%;
     position: absolute;
     display: block;
+    border-radius: 3px;
   }
   .details {
     color: #f6f6f6;
@@ -43,5 +47,12 @@
     padding: 8px 10px;
     font-size: 40px;
     text-align: center;
+    overflow: auto;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
   }
 }

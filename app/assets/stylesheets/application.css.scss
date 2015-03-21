@@ -13,7 +13,7 @@
  *= require_tree .
  */
 
-$bgHighlight    : #D6BA00;
+$bgHighlight    : #969696;
 $colDefault     : #ecf0f1;
 $colHighlight   : #ecdbff;
 
@@ -31,6 +31,12 @@ $colHighlight   : #ecdbff;
 
 body {
   background-color: $bgHighlight;
+}
+
+.group::after {
+  display: block;
+  clear: both;
+  content: '';
 }
 
 #board-title {

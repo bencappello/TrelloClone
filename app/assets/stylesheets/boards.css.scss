@@ -3,11 +3,11 @@
 }
 
 .boards > li {
-  width: 25%;
+  width: 33%;
   float: left;
   position: relative;
   a {
-    height: 90px;
+    height: 160px;
     margin: 0 16px 16px 0;
     color: #f6f6f6;
     background-color: rgba(0, 0, 0, 0.12);
@@ -41,5 +41,7 @@
     right: 0;
     display: block;
     padding: 8px 10px;
+    font-size: 40px;
+    text-align: center;
   }
 }

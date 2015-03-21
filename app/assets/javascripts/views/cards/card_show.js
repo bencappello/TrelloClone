@@ -10,7 +10,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend ({
   template: JST['cards/show'],
 
   events: {
-    'click button#delete-card': 'removeCard'
+    'click #delete-card': 'removeCard'
   },
 
   attributes: function() {

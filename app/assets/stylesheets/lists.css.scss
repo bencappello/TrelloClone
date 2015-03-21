@@ -1,7 +1,7 @@
 li.list-show {
   margin-left : 20px;
   width: 260px;
-  background: #E3E3E3;
+  background: rgba(255, 255, 255, .6);;
   border-radius: 4px;
   white-space: normal;
 }
@@ -21,14 +21,13 @@ li.list-show {
 }
 
 #list-form {
-  margin-left: 20px;
+  margin-left: 15px;
   width: 240px;
 }
 
-#list-title {
-  width: 90%;
-  float: left;
-  padding: 0 5px 5px 5px;
+#buffer {
+  width: 20px;
+  display: inline-block;
 }
 
 #list-form .list-form-container > a {
@@ -48,6 +47,12 @@ li.list-show {
   padding: 10px;
   background: rgba(0,0,0,.12);
   border-radius: 3px;
+}
+
+#list-title {
+  width: 90%;
+  float: left;
+  padding: 0 5px 5px 5px;
 }
 
 .list-place-holder {

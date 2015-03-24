@@ -3,25 +3,35 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.parent = options.parent;
-    this.listenTo(this.model, 'sync', this.render);
+    // this.listenTo(this.model, 'sync', this.render);
+    $('#md-overlay').on('click', this.dismiss.bind(this));
   },
+
+  tagName: 'div',
+
+  className: 'list-modal',
 
   events: {
     'click .modal-dismiss': 'dismiss',
-    'click .modal-backdrop' : 'dismiss',
-    'click #delete-list': 'removeList',
+    'click .md-overlay' : 'dismiss',
+    'click #delete-list': 'deleteList',
     'click #update-list': 'update',
   },
 
   dismiss: function (event) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     this.remove();
+    $('#md-overlay').removeClass('show');
   },
 
   render: function () {
     var content = this.template({ list: this.model });
     this.$el.html(content);
     this.attachSubviews();
+    $('#md-overlay').addClass('show');
+    this.$el.addClass('md-show');
     return this;
   },
 
@@ -30,14 +40,14 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
     this.model.set({ title: this.$('textarea').val() });
     this.model.save({}, { wait: true });
 
-    this.remove();
+    this.dismiss();
   },
 
-  removeList: function (event) {
+  deleteList: function (event) {
     event.preventDefault();
     this.model.destroy();
     this.parent.removeSubview('ul#lists', this)
 
-    this.remove();
+    this.dismiss();
   },
 });

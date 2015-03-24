@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Bulletin Stack</title>
+  <script>var polyfilter_scriptpath = '/js/';</script>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,5 +12,6 @@
 <body>
   <%= render partial: "layouts/header" %>
   <%= yield %>
+
 </body>
 </html>

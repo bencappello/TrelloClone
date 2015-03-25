@@ -39,6 +39,10 @@ ul {
   display: block;
 }
 
+textarea {
+  resize: vertical;
+}
+
 .close-lg {
   font-size: 30px;
 }
@@ -84,21 +88,7 @@ ul {
 
 
 
-
-
-
-
-
 //MODAL
-
-/* General styles for the modal */
-
-/*
-Styles for the html/body for special modal where we want 3d effects
-Note that we need a container wrapping all content on the page for the
-perspective effects (not including the modals and the overlay).
-*/
-
 
 .modal-dismiss {
   float: right;

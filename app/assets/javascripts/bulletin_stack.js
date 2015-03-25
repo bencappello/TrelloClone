@@ -11,7 +11,6 @@ window.BulletinStack = {
 
     new BulletinStack.Routers.Router(boards, $rootEl);
     Backbone.history.start();
-
   }
 };
 

@@ -13,7 +13,7 @@
   background: rgba(255, 255, 255, .6);
   border-radius: 4px;
   white-space: normal;
-  padding: 5px;
+  padding: 10px;
   max-height: 100%;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -41,7 +41,7 @@
 }
 
 .list-show-container {
-  width: 270px;
+  width: 260px;
 }
 
 #list-form {
@@ -114,7 +114,8 @@
 }
 
 ul#cards {
-  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .modal-form {
@@ -146,6 +147,7 @@ ul#cards {
 .modal-form textarea {
   margin-bottom: 10px;
   font-size: 22px;
+  resize: vertical;
 }
 
 .modal-form button.update {

@@ -118,52 +118,9 @@ ul#cards {
   margin-bottom: 5px;
 }
 
-.modal-form {
-  width: 40%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  z-index: 1032;
-  visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.modal-form .md-content {
-  background-color: rgb(240, 240, 240);
-  border-radius: 3px;
-}
-
-.modal-form .md-content .content-container {
-  padding: 80px 30px 20px 30px;
-  display: block;
-}
-
-.modal-form textarea {
-  margin-bottom: 10px;
-  font-size: 22px;
-  resize: vertical;
-}
-
-.modal-form button.update {
-  width: 100%;
-  display: block;
-  margin-bottom: 50px;
-}
-
-.modal-form button.delete {
-  float: right;
-  width: auto;
-  font-size: 13px
-}
 
 
-
+//MODAL
 
 
 .list-modal {

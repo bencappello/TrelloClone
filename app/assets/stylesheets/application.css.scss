@@ -13,6 +13,9 @@
  *= require_tree .
  */
 
+ $bgMain: #DEB887;
+ $bgLight: #d5b790;
+
 @import "bootstrap";
 @import "font-awesome";
 
@@ -26,7 +29,7 @@
 }
 
 body {
-  background-color: #DEB887;
+  background-color: $bgMain;
 }
 
 .group::after {
@@ -89,6 +92,52 @@ textarea {
 
 
 //MODAL
+
+.modal-form {
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  z-index: 1032;
+  visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.modal-form .md-content {
+  background-color: $bgMain;
+  border-radius: 3px;
+}
+
+.modal-form .md-content .content-container {
+  padding: 80px 30px 20px 30px;
+  display: block;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, .4);
+}
+
+.modal-form textarea {
+  margin-bottom: 10px;
+  font-size: 22px;
+  resize: vertical;
+}
+
+.modal-form button.update {
+  width: 100%;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.modal-form button.delete {
+  float: right;
+  width: auto;
+  font-size: 13px
+}
 
 .modal-dismiss {
   float: right;

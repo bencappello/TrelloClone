@@ -1,10 +1,12 @@
-<div class='group' id="list-header">
-  <div id='list-title'>
-    <%= list.escape('title') %>
+<div class="list-show-container">
+  <div class='group' id="list-header">
+    <div id='list-title'>
+      <%= list.escape('title') %>
+    </div>
+    <i class="md-trigger fa fa-pencil-square-o" id='edit-list'></i>
   </div>
-  <i class="md-trigger fa fa-pencil-square-o" id='edit-list'></i>
+
+  <ul class="sort-cards connectable" id='cards'></ul>
+
+  <div class='list-footer'></div>
 </div>
-
-<ul class="sort-cards connectable" id='cards'></ul>
-
-<div class='list-footer'></div>

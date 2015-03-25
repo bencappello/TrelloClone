@@ -11,12 +11,13 @@
 }
 
 .card-show:hover {
+  background: #DEDEDE;
   cursor: -moz-grab;
   cursor: -webkit-grab;
 }
 
-.sort-cards {
-
+.card-show:hover #edit-card{
+  display: inline-block
 }
 
 .add-card {
@@ -31,8 +32,22 @@
   }
 }
 
+.card-text {
+  float: left;
+  width: 93%;
+}
+
 #edit-card {
-  
+  float: right;
+  margin-top: 3px;
+  font-size: 16px;
+  display: none;
+  color: rgba(0,0,0,0.3);
+}
+
+#edit-card:hover, #edit-card:focus {
+  color: rgba(0,0,0,0.6);
+  cursor: pointer;
 }
 
 .card-place-holder {

@@ -5,7 +5,7 @@ BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
 
   tagName: 'li',
 
-  className: 'card-show',
+  className: 'card-show group',
 
   template: JST['cards/show'],
 

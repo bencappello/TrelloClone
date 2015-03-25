@@ -114,7 +114,7 @@ ul#cards {
 }
 
 .list-modal {
-  width: 33%;
+  width: 40%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -135,25 +135,25 @@ ul#cards {
 }
 
 .list-modal .md-content .content-container {
-  padding: 60px 30px 20px 30px;
+  padding: 80px 30px 20px 30px;
   display: block;
 }
 
 .list-modal textarea {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .list-modal button.update {
   width: 100%;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .list-modal button.delete {
   float: right;
   width: auto;
-  font-size: 12px
+  font-size: 14px
 }
 
 
@@ -188,7 +188,7 @@ ul#cards {
 }
 
 @-webkit-keyframes slit {
-	50% { -webkit-transform: translateZ(-250px) rotateY(89deg); opacity: .5; -webkit-animation-timing-function: ease-out;}
+	50% { -webkit-transform: translateZ(-250px) rotateY(88deg); opacity: .5; -webkit-animation-timing-function: ease-out;}
 	100% { -webkit-transform: translateZ(0) rotateY(0deg); opacity: 1; }
 }
 

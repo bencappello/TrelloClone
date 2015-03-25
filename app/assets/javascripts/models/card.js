@@ -1,5 +1,5 @@
 BulletinStack.Models.Card = Backbone.Model.extend ({
-  urlRoot: 'api/cards'
+  urlRoot: 'api/cards',
 
   items: function () {
     if (!this._items) {

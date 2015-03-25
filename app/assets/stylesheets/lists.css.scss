@@ -117,7 +117,7 @@ ul#cards {
   padding: 5px;
 }
 
-.list-modal {
+.modal-form {
   width: 40%;
   position: absolute;
   top: 50%;
@@ -133,28 +133,28 @@ ul#cards {
 	backface-visibility: hidden;
 }
 
-.list-modal .md-content {
+.modal-form .md-content {
   background-color: rgb(240, 240, 240);
   border-radius: 3px;
 }
 
-.list-modal .md-content .content-container {
+.modal-form .md-content .content-container {
   padding: 80px 30px 20px 30px;
   display: block;
 }
 
-.list-modal textarea {
+.modal-form textarea {
   margin-bottom: 10px;
   font-size: 22px;
 }
 
-.list-modal button.update {
+.modal-form button.update {
   width: 100%;
   display: block;
   margin-bottom: 50px;
 }
 
-.list-modal button.delete {
+.modal-form button.delete {
   float: right;
   width: auto;
   font-size: 13px
@@ -164,10 +164,6 @@ ul#cards {
 
 
 
-
-
-
-/* Effect 13: 3D slit */
 .list-modal {
 	-webkit-perspective: 1300px;
 	-moz-perspective: 1300px;

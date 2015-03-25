@@ -9,7 +9,7 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
 
   tagName: 'div',
 
-  className: 'list-modal',
+  className: 'modal-form list-modal',
 
   events: {
     'click .modal-dismiss': 'dismiss',

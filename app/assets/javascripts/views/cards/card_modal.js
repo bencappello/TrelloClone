@@ -3,13 +3,14 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.parent = options.parent;
+    // this.model.fetch();
     // this.listenTo(this.model, 'sync', this.render);
     $('#md-overlay').on('click', this.dismiss.bind(this));
   },
 
   tagName: 'div',
 
-  className: 'list-modal',
+  className: 'modal-form card-modal',
 
   events: {
     'click .modal-dismiss': 'dismiss',
@@ -24,14 +25,18 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
     }
     this.remove();
     $('#md-overlay').removeClass('show');
+    this.$el.removeClass('md-show');
   },
 
   render: function () {
+    var that = this;
     var content = this.template({ card: this.model });
     this.$el.html(content);
     this.attachSubviews();
     $('#md-overlay').addClass('show');
-    this.$el.addClass('md-show');
+    var i = setTimeout(function() {
+      that.$el.addClass('md-show');
+    }, 1);
     return this;
   },
 

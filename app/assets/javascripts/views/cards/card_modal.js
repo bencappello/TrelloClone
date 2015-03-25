@@ -1,5 +1,5 @@
-BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
-  template: JST['lists/modal'],
+BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
+  template: JST['cards/modal'],
 
   initialize: function (options) {
     this.parent = options.parent;
@@ -15,7 +15,7 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
     'click .modal-dismiss': 'dismiss',
     'click .md-overlay' : 'dismiss',
     'click #update-list': 'update',
-    'click #delete-list': 'deleteList',
+    'click #delete-list': 'deleteCard',
   },
 
   dismiss: function (event) {
@@ -27,7 +27,7 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({ list: this.model });
+    var content = this.template({ card: this.model });
     this.$el.html(content);
     this.attachSubviews();
     $('#md-overlay').addClass('show');
@@ -43,10 +43,10 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
     this.dismiss();
   },
 
-  deleteList: function (event) {
+  deleteCard: function (event) {
     event.preventDefault();
     this.model.destroy();
-    this.parent.removeSubview('ul#lists', this)
+    this.parent.removeSubview('ul#cards', this)
 
     this.dismiss();
   },

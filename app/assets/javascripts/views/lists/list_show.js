@@ -22,7 +22,7 @@ BulletinStack.Views.ListShow = Backbone.CompositeView.extend ({
     'sortreceive': 'receiveCard',
     'sortremove': 'removeCard',
     'sortstop': 'saveCards',
-    'click .edit-list': 'showModal',
+    'click #edit-list': 'showModal',
   },
 
   attributes: function() {

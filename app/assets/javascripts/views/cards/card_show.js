@@ -1,6 +1,7 @@
 BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
   initialize: function (options) {
     this.parent = options.parent;
+    this.listenTo(this.model, 'change', this.render);
   },
 
   tagName: 'li',
@@ -10,7 +11,7 @@ BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
   template: JST['cards/show'],
 
   events: {
-    'click #delete-card': 'removeCard'
+    'click #edit-card': 'showModal',
   },
 
   attributes: function() {
@@ -24,10 +25,11 @@ BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
     return this;
   },
 
-  removeCard: function (event) {
-    event.preventDefault();
-    this.model.destroy();
-    this.parent.removeSubview('ul#cards', this)
-  },
+  showModal: function () {
+  this.modalView = this.modalView ||
+    new BulletinStack.Views.CardModal({ model: this.model, parent: this.parent });
+  $('body').prepend(this.modalView.render().$el);
+  this.modalView.delegateEvents();
+},
 
 })

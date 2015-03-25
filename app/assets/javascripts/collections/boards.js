@@ -21,6 +21,6 @@ BulletinStack.Collections.Boards = Backbone.Collection.extend ({
       })
     }
     return maybeBoard;
-  }
+  },
 
 })

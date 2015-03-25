@@ -13,6 +13,11 @@ module Api
       end
     end
 
+    def show
+      @card = Card.includes(:items).find(params[:id])
+      render :show
+    end
+
     def update
       @card = Card.find(params[:id])
       if @card.update_attributes(card_params)

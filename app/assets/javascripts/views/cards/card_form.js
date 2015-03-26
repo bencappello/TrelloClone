@@ -14,16 +14,4 @@ BulletinStack.Views.CardForm = Backbone.LinkFormView.extend({
     this.$('textarea').focus();
   },
 
-  render: function () {
-    var content;
-    if(this.formShowing) {
-      content = this.formTemplate();
-    } else {
-      content = this.linkTemplate();
-    }
-
-    this.$el.html(content);
-    this.delegateEvents();
-    return this;
-  }
 });

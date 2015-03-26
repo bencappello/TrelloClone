@@ -3,6 +3,14 @@ BulletinStack.Views.ItemForm = Backbone.LinkFormView.extend({
   linkTemplate: JST['items/form_link'],
   className: 'item-form-container',
 
+  events: {
+    'click a': 'showForm',
+    'click .close': 'hideForm',
+    'submit' : 'create',
+    'click .btn-success' : 'create',
+    'keydown textarea': 'maybeCreate'
+  },
+
   initialize: function (options) {
     this.parentView = options.parentView;
   },
@@ -20,16 +28,4 @@ BulletinStack.Views.ItemForm = Backbone.LinkFormView.extend({
     this.$('textarea').focus();
   },
 
-  render: function () {
-    var content;
-    if(this.formShowing) {
-      content = this.formTemplate();
-    } else {
-      content = this.linkTemplate();
-    }
-
-    this.$el.html(content);
-    this.delegateEvents();
-    return this;
-  }
 });

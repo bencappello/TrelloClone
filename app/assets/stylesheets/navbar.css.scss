@@ -31,7 +31,10 @@
 }
 
 .container > .navbar-header {
-  margin-left: 30px;
+  // margin-left: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
 }
 
 .navbar-logo {

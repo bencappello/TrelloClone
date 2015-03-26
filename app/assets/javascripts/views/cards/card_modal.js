@@ -29,7 +29,6 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
     var $target = $(event.target);
     if (event) {
       event.preventDefault();
-      debugger
       if (!$target.hasClass('md-close')) {
         return;
       }

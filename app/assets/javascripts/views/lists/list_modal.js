@@ -18,7 +18,6 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
   },
 
   dismiss: function (event) {
-    debugger
     if (event) {
       event.preventDefault();
     }

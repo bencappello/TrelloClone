@@ -26,11 +26,11 @@ BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
   },
 
   showModal: function () {
-  this.modalView = this.modalView ||
-    new BulletinStack.Views.CardModal({ model: this.model, parent: this.parent });
-  $('body').prepend(this.modalView.$el);
-  this.modalView.render();
-  this.modalView.delegateEvents();
-},
+    this.modalView = this.modalView ||
+      new BulletinStack.Views.CardModal({ model: this.model, parent: this.parent });
+    $('body').prepend(this.modalView.$el);
+    this.modalView.render();
+    this.modalView.delegateEvents();
+  },
 
 })

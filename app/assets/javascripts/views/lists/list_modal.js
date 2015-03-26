@@ -24,9 +24,11 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
     }
     this.remove();
     $('#md-overlay').removeClass('show');
+    $("body").css("overflow", "auto");
   },
 
   render: function () {
+    $("body").css("overflow", "hidden");
     var content = this.template({ list: this.model });
     this.$el.html(content);
     this.attachSubviews();

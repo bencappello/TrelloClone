@@ -1,13 +1,14 @@
-BulletinStack.Views.CardForm = Backbone.LinkFormView.extend({
-  formTemplate: JST['cards/form'],
-  linkTemplate: JST['cards/form_link'],
+BulletinStack.Views.ItemForm = Backbone.LinkFormView.extend({
+  formTemplate: JST['items/form'],
+  linkTemplate: JST['items/form_link'],
+  className: 'item-form-container',
 
   create: function (event) {
     event.preventDefault();
 
     this.collection.create({
       title: this.$('textarea').val(),
-      list_id: this.collection.list.id
+      card_id: this.collection.card.id
     }, { wait: true });
 
     this.$('textarea').val('');

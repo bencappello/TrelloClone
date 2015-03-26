@@ -1,10 +1,18 @@
+#items-header {
+  background-color: rgba(255, 255, 255, .7);
+  font-size: 18px;
+  text-decoration: underline;
+  padding: 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
 #items {
-  margin-bottom: 30px;
 }
 
 .item-show {
   background-color: rgba(255, 255, 255, .7);
-  padding: 5px;
+  padding: 5px 10px;
 
   &:hover {
     cursor: -moz-grab;
@@ -19,5 +27,23 @@
 }
 
 .item-title {
-  font-size: 30px;
+  font-size: 16px;
+}
+
+#item-form {
+  background-color: rgba(255, 255, 255, .7);
+  padding: 20px 10px 10px 10px;
+  margin-bottom: 30px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#item-form .item-form-container > a {
+  padding: 0 5px 10px 5px;
+}
+
+#item-form form {
+  background-color: rgba(0, 0, 0, .2);
+  padding: 10px;
+  border-radius: 3px;
 }

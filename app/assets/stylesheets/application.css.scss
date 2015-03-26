@@ -174,6 +174,17 @@ body .md-show {
 	visibility: visible;
 }
 
+#md-outline {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+  z-index: 1001;
+  overflow-y: scroll;
+}
+
 #md-overlay {
 	position: fixed;
 	width: 100%;
@@ -183,7 +194,6 @@ body .md-show {
 	left: 0;
 	z-index: 1000;
 	opacity: 0;
-  overflow-y: scroll;
 	background: rgba(0,0,0,0.8);
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;

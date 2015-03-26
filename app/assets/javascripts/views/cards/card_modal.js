@@ -46,7 +46,7 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
         that.$el.addClass('md-show');
       }
     });
-
+    this.renderItemForm();
     $('#md-overlay').addClass('show');
     $( ".sort-items" ).sortable({
       placeholder: "item-place-holder",
@@ -65,6 +65,13 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
 
   renderItems: function() {
     this.model.items().each(this.addItem.bind(this));
+  },
+
+  renderItemForm: function () {
+    var formView = new BulletinStack.Views.ItemForm({
+      collection: this.model.items()
+    });
+    this.addSubview('#item-form', formView);
   },
 
   update: function (event) {

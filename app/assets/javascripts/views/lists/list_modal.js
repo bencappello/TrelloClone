@@ -12,19 +12,20 @@ BulletinStack.Views.ListModal = Backbone.CompositeView.extend({
   className: 'modal-form list-modal',
 
   events: {
-    'click .modal-dismiss': 'dismiss',
-    'click .md-overlay' : 'dismiss',
+    'click .md-close': 'dismiss',
     'click #update-list': 'update',
     'click #delete-list': 'deleteList',
   },
 
   dismiss: function (event) {
+    debugger
     if (event) {
       event.preventDefault();
     }
     this.remove();
     $('#md-overlay').removeClass('show');
     $("body").css("overflow", "auto");
+    $('#md-overlay').off();
   },
 
   render: function () {

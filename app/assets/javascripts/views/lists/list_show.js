@@ -97,9 +97,11 @@ BulletinStack.Views.ListShow = Backbone.CompositeView.extend ({
   },
 
   showModal: function () {
-  this.modalView = this.modalView ||
-    new BulletinStack.Views.ListModal({ model: this.model, parent: this.parent });
-  $('#md-outline').prepend(this.modalView.render().$el);
+  this.modalView = new BulletinStack.Views.ListModal({
+    model: this.model,
+    parent: this.parent
+  });
+  $('body').prepend(this.modalView.render().$el);
   this.modalView.delegateEvents();
 },
 

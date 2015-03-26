@@ -37,6 +37,7 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
     this.remove();
     $('#md-overlay').removeClass('show');
     this.$el.removeClass('md-show');
+    $('#md-overlay').off();
   },
 
   postFetchRendering: function() {

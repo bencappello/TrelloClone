@@ -20,22 +20,22 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
 
   events: {
     'sortstop': 'saveOrds',
-    'click .modal-dismiss': 'dismiss',
-    'click .md-overlay' : 'dismiss',
+    'click .md-close': 'dismiss',
     'click #update-list': 'update',
     'click #delete-list': 'deleteCard',
   },
 
   dismiss: function (event) {
+    var $target = $(event.target);
     if (event) {
       event.preventDefault();
-      if(!$(event.target).hasClass('overlay')) {
+      debugger
+      if (!$target.hasClass('md-close')) {
         return;
       }
     }
     this.remove();
     $('#md-overlay').removeClass('show');
-    $('#md-outline').removeClass('show');
     this.$el.removeClass('md-show');
   },
 
@@ -51,7 +51,6 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.renderItemForm();
     $('#md-overlay').addClass('show');
-    $('#md-outline').addClass('show');
     $( ".sort-items" ).sortable({
       placeholder: "item-place-holder",
       start: function(e, ui ){

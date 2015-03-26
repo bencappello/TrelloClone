@@ -1,6 +1,6 @@
 BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
   initialize: function (options) {
-    this.parent = options.parent;
+    this.list = options.list;
     this.listenTo(this.model, 'change', this.render);
   },
 
@@ -15,10 +15,10 @@ BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
   },
 
   attributes: function() {
-  return {
-    'data-card-id': this.model.id
-  };
-},
+    return {
+      'data-card-id': this.model.id
+    };
+  },
 
   render: function () {
     this.$el.html(this.template({card: this.model}))
@@ -26,8 +26,10 @@ BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
   },
 
   showModal: function () {
-    this.modalView = this.modalView ||
-      new BulletinStack.Views.CardModal({ model: this.model, parent: this.parent });
+    this.modalView = new BulletinStack.Views.CardModal({
+      model: this.model,
+      list: this.list
+    });
     $('#md-outline').prepend(this.modalView.$el);
     this.modalView.render();
     this.modalView.delegateEvents();

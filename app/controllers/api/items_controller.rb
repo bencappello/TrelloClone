@@ -4,7 +4,7 @@ module Api
 
     def create
       @item = current_card.items.new(item_params)
-      # @item.ord = current_card.items.count
+      @item.ord = current_card.items.count
 
       if @item.save
         render json: @item

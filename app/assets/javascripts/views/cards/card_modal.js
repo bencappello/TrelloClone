@@ -2,9 +2,10 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
   template: JST['cards/modal'],
 
   initialize: function (options) {
-    this.parent = options.parent;
-    // this.listenTo(this.model, 'sync', this.render);
+    this.model.fetch();
+    this.list = options.list;
     $('#md-overlay').on('click', this.dismiss.bind(this));
+    this.listenTo(this.model, 'sync', this.postFetchRendering.bind(this));
   },
 
   tagName: 'div',
@@ -32,20 +33,18 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
     this.remove();
     $('#md-overlay').removeClass('show');
     this.$el.removeClass('md-show');
-    // $("body").css("overflow", "auto");
+  },
+
+  postFetchRendering: function() {
+    this.renderItems();
+    this.$el.addClass('md-show');
+    this.collection = this.model.items();
   },
 
   render: function () {
-    // $("body").css("overflow", "hidden");
     var that = this;
     var content = this.template({ card: this.model });
     this.$el.html(content);
-    this.model.fetch({
-      success: function () {
-        that.renderItems();
-        that.$el.addClass('md-show');
-      }
-    });
     this.renderItemForm();
     $('#md-overlay').addClass('show');
     $( ".sort-items" ).sortable({
@@ -69,7 +68,8 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
 
   renderItemForm: function () {
     var formView = new BulletinStack.Views.ItemForm({
-      collection: this.model.items()
+      collection: this.model.items(),
+      parentView: this
     });
     this.addSubview('#item-form', formView);
   },
@@ -85,8 +85,10 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
   deleteCard: function (event) {
     event.preventDefault();
     this.model.destroy();
-    this.parent.removeSubview('ul#cards', this)
+    this.list.removeSubview('ul#cards', this)
 
     this.dismiss();
   },
 });
+
+_.extend(BulletinStack.Views.CardModal.prototype, BulletinStack.Utils.OrdView);

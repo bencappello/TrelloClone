@@ -39,29 +39,38 @@
 
 .navbar-logo {
   float: left;
-  margin-top: 11px;
+  margin-top: -5px;
   margin-right: 10px;
 }
 
 .navbar-default .navbar-brand {
   color: #f6f6f6;
+
+  &:hover, &:focus {
+    color: #f6f6f6;
+  }
+
+  &:hover .logo-screen {
+    background-color: rgba(0,0,0,0.5);
+  }
 }
 
-.navbar-default .navbar-brand:hover {
-  color: #D1D1D1;
-}
+.logo-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 
-.navbar-default .navbar-brand:focus {
-  color: #f6f6f6;
+  &:hover {
+    background-color: rgba(0,0,0,0.3);
+  }
 }
 
 .navbar-default .navbar-nav > li > a {
   color: #f6f6f6;
-}
 
-.navbar-default .navbar-nav > li > a:hover,
-  .navbar-default .navbar-nav > li > a:hover {
-  color: #D1D1D1;
+  &:hover, &:focus {
+    color: #D1D1D1;
+  }
 }
 
 .dropdown-toggle {
@@ -121,8 +130,4 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-}
-
-navbar-logo {
-  float: left;
 }

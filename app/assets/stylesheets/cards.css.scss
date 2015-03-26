@@ -64,6 +64,16 @@
 
 //MODAL
 
+.card-modal {
+  top: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
 .card-modal .md-content {
 	-webkit-transform: translateY(20%);
 	-moz-transform: translateY(20%);

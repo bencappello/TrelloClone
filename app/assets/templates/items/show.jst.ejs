@@ -1,1 +1,3 @@
-<div class="item-text"><%= item.escape('title') %> <%= item.escape('ord') %></div>
+<input type="checkbox" name="done" class="item-done"
+  <%= item.get('done') ? 'checked' : '' %>>
+<span class='item-title'><%= item.escape('title') %> <%= item.escape('ord') %></span>

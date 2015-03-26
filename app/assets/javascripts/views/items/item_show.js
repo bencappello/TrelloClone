@@ -11,13 +11,13 @@ BulletinStack.Views.ItemShow = Backbone.CompositeView.extend ({
   template: JST['items/show'],
 
   events: {
+    'click .item-done': 'toggleDone'
   },
 
-  attributes: function() {
-  return {
-    'data-item-id': this.model.id
-  };
-},
+  toggleDone: function () {
+    this.model.set('done', !this.model.get('done'));
+    this.model.save();
+  },
 
   render: function () {
     this.$el.html(this.template({item: this.model}))

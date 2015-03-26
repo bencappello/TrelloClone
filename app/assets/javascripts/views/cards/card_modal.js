@@ -32,11 +32,11 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
     this.remove();
     $('#md-overlay').removeClass('show');
     this.$el.removeClass('md-show');
-    $("body").css("overflow", "auto");
+    // $("body").css("overflow", "auto");
   },
 
   render: function () {
-    $("body").css("overflow", "hidden");
+    // $("body").css("overflow", "hidden");
     var that = this;
     var content = this.template({ card: this.model });
     this.$el.html(content);
@@ -48,11 +48,8 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
     });
 
     $('#md-overlay').addClass('show');
-    // var i = setTimeout(function() {
-    //   that.$el.addClass('md-show');
-    // }, 1);
     $( ".sort-items" ).sortable({
-      placeholder: "card-place-holder",
+      placeholder: "item-place-holder",
       start: function(e, ui ){
         ui.placeholder.height(ui.helper.outerHeight());
         ui.placeholder.width(ui.helper.outerWidth());

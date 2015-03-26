@@ -50,6 +50,12 @@ input[type="checkbox"]:hover {
   cursor: pointer;
 }
 
+.close {
+  color: rgba(0,0,0,0.2);
+  opacity: 1;
+  text-shadow: none;
+}
+
 .close-lg {
   font-size: 30px;
 }

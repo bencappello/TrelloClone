@@ -47,7 +47,7 @@ BulletinStack.Views.ListShow = Backbone.CompositeView.extend ({
   },
 
   addCard: function (card) {
-    var showCardView = new BulletinStack.Views.CardShow({model: card, parent: this});
+    var showCardView = new BulletinStack.Views.CardShow({model: card, list: this});
     this.addSubview('ul#cards', showCardView);
   },
 

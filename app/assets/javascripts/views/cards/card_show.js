@@ -30,7 +30,7 @@ BulletinStack.Views.CardShow = Backbone.CompositeView.extend ({
       model: this.model,
       list: this.list
     });
-    $('#md-outline').prepend(this.modalView.$el);
+    $('#md-overlay').prepend(this.modalView.$el);
     this.modalView.render();
     this.modalView.delegateEvents();
   },

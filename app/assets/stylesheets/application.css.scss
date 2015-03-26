@@ -46,6 +46,10 @@ textarea {
   resize: vertical;
 }
 
+input[type="text"], input[type="password"] {
+  background-color: white;
+}
+
 input[type="checkbox"]:hover {
   cursor: pointer;
 }
@@ -199,4 +203,8 @@ body .md-show {
 #md-overlay.show {
 	opacity: 1;
 	visibility: visible;
+}
+
+.login-container {
+  margin-left: 30px;
 }

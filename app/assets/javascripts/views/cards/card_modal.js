@@ -21,8 +21,8 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
   events: {
     'sortstop': 'saveOrds',
     'click .md-close': 'dismiss',
-    'click #update-list': 'update',
-    'click #delete-list': 'deleteCard',
+    'click #update-card': 'update',
+    'click #delete-card': 'deleteCard',
   },
 
   dismiss: function (event) {

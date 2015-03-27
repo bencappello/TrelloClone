@@ -6,12 +6,13 @@ BulletinStack.Views.ItemShow = Backbone.CompositeView.extend ({
 
   tagName: 'div',
 
-  className: 'item-show',
+  className: 'item-show group',
 
   template: JST['items/show'],
 
   events: {
-    'click .item-done': 'toggleDone'
+    'click .item-done': 'toggleDone',
+    'click #delete-item': 'deleteItem',
   },
 
   attributes: function() {
@@ -28,6 +29,15 @@ BulletinStack.Views.ItemShow = Backbone.CompositeView.extend ({
   render: function () {
     this.$el.html(this.template({item: this.model}))
     return this;
+  },
+
+  deleteItem: function (event) {
+    event.preventDefault();
+    this.model.destroy();
+    this.parent.removeSubview('#items', this);
+    this.parent.saveOrds();
+
+    this.dismiss();
   },
 
 })

@@ -1,3 +1,4 @@
 <input type="checkbox" name="done" class="item-done"
   <%= item.get('done') ? 'checked' : '' %>>
 <span class='item-title'><%= item.escape('title') %></span>
+<a href="#" class="close" id='delete-item'>&times;</a>

@@ -89,7 +89,8 @@ BulletinStack.Views.CardModal = Backbone.CompositeView.extend({
   deleteCard: function (event) {
     event.preventDefault();
     this.model.destroy();
-    this.list.removeSubview('ul#cards', this)
+    this.list.removeSubview('ul#cards', this);
+    this.list.saveOrds();
 
     this.dismiss();
   },

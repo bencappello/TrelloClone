@@ -10,7 +10,7 @@ BulletinStack.Views.ListForm = Backbone.LinkFormView.extend({
       title: this.$('textarea').val(),
       board_id: this.collection.board.id
     }, { wait: true });
-    
+
     this.$('textarea').val('');
     this.$('textarea').focus();
   }

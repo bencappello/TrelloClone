@@ -4,11 +4,22 @@
   <form action="/session" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <label>Email<br>
-      <input name="user[email]" type="text" value="guest"><br>
+      <input name="user[email]" type="text"><br>
     </label><br>
     <label>Password<br>
-      <input name="user[password]" type="password" value="guest"><br>
+      <input name="user[password]" type="password"><br>
     </label><br>
     <input type="submit" value="Submit" class="btn btn-primary"><br>
+  </form>
+</div>
+
+<div class="guest-login-container">
+  <h4 class='or'>or</h4>
+
+  <form class ='guest-login-form' action="/session" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input name="user[email]" type="hidden" value="guest"><br>
+      <input name="user[password]" type="hidden" value="guest"><br>
+    <input type="submit" value="Guest Log In" class="btn btn-primary"><br>
   </form>
 </div>
